@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const isMobileLayout = typeof window === "undefined";
+const isServerSideRendering = typeof window === "undefined";
 const GreenContent = styled.div`
   background: palegreen;
 `;
 
 export default () =>
-  isMobileLayout ? (
+  isServerSideRendering ? (
     <GreenContent>SSR Rendering</GreenContent>
   ) : (
     <div>
